@@ -41,7 +41,7 @@ public void draw ()
 }
 public boolean isWon()
 {
-    
+
     return false;
 }
 public void displayLosingMessage()
@@ -49,6 +49,8 @@ public void displayLosingMessage()
     fill(255,0,255);
     textSize(40);
     textAlign(CENTER);
+    buttons[2][2].setLabel("LOSER!!!!!");
+
 
 }
 public void displayWinningMessage()
@@ -56,7 +58,8 @@ public void displayWinningMessage()
     fill(255,0,255);
     textSize(40);
     textAlign(CENTER);
-    text("WINNER!!!!!",100,100);
+    buttons[2][2].setLabel("YAY!!!");
+    
 }
 public boolean isValid(int r, int c)
 {
@@ -129,12 +132,19 @@ public class MSButton
         else if(flagged == false){
             clicked = false;
           }
-        else if(mines.contains(buttons[myRow][myCol])){
+        if(mines.contains(buttons[myRow][myCol])){
           displayLosingMessage();
         }
         if(countMines(myRow,myCol)>0){
           myLabel = (""+countMines(myRow,myCol)+"");
         }
+          int q = 0;
+        if(!mines.contains(buttons[myRow][myCol]) && clicked == true){
+          q++;
+        }
+    if((NUM_ROWS*NUM_COLS)-q == countMines(NUM_ROWS,NUM_COLS)){
+      displayWinningMessage();
+    }
         else{
           for(int z = myRow-1; z<myRow+2;z++){
             for(int m = myCol - 1; m<myCol+2; m++){
