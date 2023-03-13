@@ -101,6 +101,7 @@ for(int r = row-1; r<row+2; r++){
 if(mines.contains(buttons[row][col])==true){
   numMines --;
 }
+    //why cant i see this?
     return numMines;
 }
 public class MSButton
@@ -139,13 +140,13 @@ public class MSButton
         if(countMines(myRow,myCol)>0){
           myLabel = (""+countMines(myRow,myCol)+"");
         }
-          int q = 0;
-        if(!mines.contains(buttons[myRow][myCol]) && clicked == true){
-          q++;
-        }
-    if((NUM_ROWS*NUM_COLS)-q == countMines(NUM_ROWS,NUM_COLS)){
-      displayWinningMessage();
-    }
+    //      int q = 0;
+    //    if(!mines.contains(buttons[myRow][myCol]) && clicked == true){
+    //      q++;
+    //    }
+    //if((NUM_ROWS*NUM_COLS)-q == countMines(NUM_ROWS,NUM_COLS)){
+    //  displayWinningMessage();
+    //}
         else{
           for(int z = myRow-1; z<myRow+2;z++){
             for(int m = myCol - 1; m<myCol+2; m++){
