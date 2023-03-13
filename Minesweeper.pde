@@ -101,7 +101,6 @@ for(int r = row-1; r<row+2; r++){
 if(mines.contains(buttons[row][col])==true){
   numMines --;
 }
-    System.out.println(numMines);//why cant i see this?
     return numMines;
 }
 public class MSButton
