@@ -43,7 +43,7 @@ public void draw ()
 
 public boolean isWon()
 {
-  mousePressed();
+  //mousePressed();
     return false;
 }
 public void displayLosingMessage()
