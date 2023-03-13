@@ -30,18 +30,20 @@ public void setMines()
 }
 else{
   mines.add(buttons[row][col]);
-  System.out.println(row+","+ col);
 }
 }
 public void draw ()
 {
     background( 0 );
+    textSize(15);
+    buttons[0][1].setLabel("double click square to play");
     if(isWon() == true)
         displayWinningMessage();
 }
+
 public boolean isWon()
 {
-
+  mousePressed();
     return false;
 }
 public void displayLosingMessage()
